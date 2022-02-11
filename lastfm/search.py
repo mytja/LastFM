@@ -1,10 +1,6 @@
 import httpx
 
-
-class SearchType:
-    artists = "artist"
-    tracks = "track"
-    all = "all"
+from .fmtypes import SearchType
 
 
 def search(query: str, search_type: str = SearchType.all):

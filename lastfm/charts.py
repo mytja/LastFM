@@ -2,6 +2,8 @@ import urllib.parse
 
 import httpx
 
+from .fmtypes import SearchType
+
 
 class YearFilter:
     t1920s = "tag:1920s"
@@ -43,14 +45,14 @@ def get_charts(
     k = urllib.parse.urlencode({"f": music_type_filter}) if music_type_filter else ""
     k += ("&" + urllib.parse.urlencode({"f": year_filter})) if year_filter else ""
     k += ("&" + urllib.parse.urlencode({"f": f"tag:{geo_filter.lower()}"})) if geo_filter else ""
-    if request_type == ChartType.artists:
+    if request_type == SearchType.artists:
         params.update({
             "type": request_type,
             "tracks": track_limit_per_artist,
             "nr": limit,
             "format": "json",
         })
-    elif request_type == ChartType.tracks:
+    elif request_type == SearchType.tracks:
         params.update({
             "type": request_type,
             "nr": limit,
