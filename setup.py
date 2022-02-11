@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="py-lastfm",
+    name="lastfmapi-py",
     version="1.0.0",
     author="mytja",
     license='MIT',
