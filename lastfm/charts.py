@@ -3,11 +3,6 @@ import urllib.parse
 import httpx
 
 
-class ChartType:
-    artists = "artist"
-    tracks = "track"
-
-
 class YearFilter:
     t1920s = "tag:1920s"
     t1930s = "tag:1930s"
